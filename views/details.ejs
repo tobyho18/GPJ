@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <H2><%= booking.name %></H2><hr>
+        <% if (booking.photo) { %>
+            <img src="data:image/jpg;base64, <%= booking.photo %>"><br>
+        <% } %>
+        <p>Borough: <%= booking.borough %></p>
+        <p>Cuisine: <%= booking.cuisine %></p>
+        <p>Street: <%= booking.street %></p>
+        <p>Building: <%= booking.building %></p>
+        <p>Zipcode: <%= booking.zipcode %></p>
+        <p>GPS: [<%= booking.lat %>, <%= booking.lon %>]</p>
+        <p>Rating: <%= booking.rating %></p>
+        <p>Creadted by: <%= booking.created_by %></p>
+
+
+        <a href="/leaflet?lat=<%= booking.lat %>&lon=<%= booking.lon %>">Map</a><br>
+        <a href="/edit?_id=<%= booking._id %>">Edit</a><br>
+        <a href="/delete?_id=<%= booking._id %>">delete</a><br>
+        <a href="/">Go Back</a>
+    </body>
+</html>
