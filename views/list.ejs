@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <H2>Restaurants</H2>
+        <p>User:</p>
+        <p>Showing <%= nBookings %> documents (criteria: {})</p><br/>
+        <a href='/create'>Create New Restaurants</a>
+        <ul>
+            <p>Restaurants List</p>
+            <% for (var b of bookings) { %>
+            <li><a href="/details?_id=<%= b._id %>"><%= b.name %></a></li>
+            <% } %>
+        </ul>
+    </body>
+</html>
